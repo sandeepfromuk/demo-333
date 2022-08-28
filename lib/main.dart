@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/pages/LoginPage.dart';
 import 'package:flutter_application_3/pages/homePage.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,15 +12,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /*
-  //local variable 
-  int duble - we use num 
-  for all we use var 
-  
-  */
-    String n = "name";
+ 
     return MaterialApp(
-      home: HomePage(),
+      themeMode: ThemeMode.light,
+      theme:ThemeData(
+               primarySwatch: Colors.deepPurple,
+               fontFamily: GoogleFonts.lato().fontFamily,
+                primaryTextTheme: GoogleFonts.latoTextTheme(),
+               ),
+               
+      darkTheme: ThemeData(
+      //brightness: Brightness.dark,
+       primarySwatch: Colors.green),
+      //home: HomePage(),
+      //initialRoute: "/home",
+      routes:{
+         "/":(context) => LoginPage(),
+         "/home":(context) => HomePage(),
+        "/login":(context) => LoginPage(),
+
+      } ,
     );
   }
 }
+//we have a 4 types routes 
+//intial routes - is we have to go 
+
+
