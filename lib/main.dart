@@ -1,28 +1,24 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/LoginPage.dart';
-import 'package:flutter_application_3/mainold.dart';
-import 'package:flutter_application_3/pages/home_page.dart';
+import 'package:flutter_application_3/pages/homePage.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    /*
+  //local variable 
+  int duble - we use num 
+  for all we use var 
+  
+  */
+    String n = "name";
     return MaterialApp(
-      themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
-      darkTheme: ThemeData(
-      brightness: Brightness.dark),
-      initialRoute: "/login",
-      routes: {
-        "/": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage()
-      },
+      home: HomePage(),
     );
   }
 }
