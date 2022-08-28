@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
       //brightness: Brightness.dark,
        primarySwatch: Colors.green),
+       debugShowCheckedModeBanner: false,
       //home: HomePage(),
       initialRoute: "/",
       routes:{
