@@ -3,11 +3,14 @@ import 'dart:convert';
 import 'dart:convert';
 import 'dart:html';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:flutter_application_3/main.dart';
 import 'package:flutter_application_3/models/catalog.dart';
+import 'package:flutter_application_3/utills/routes.dart';
 import 'package:flutter_application_3/widgets/CatalogHeader.dart';
 import 'package:flutter_application_3/widgets/HomeWidget/Catalog_list.dart';
 import 'package:flutter_application_3/widgets/Theme.dart';
@@ -55,7 +58,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     //final dummyList = List.generate(50, (index) => CatalogModel.items[0]);
     return Scaffold(
+
       backgroundColor: MyTheme.creamColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: ()=>Navigator.pushNamed(context, MyRoutes.cartRoute),
+        
+        backgroundColor: MyTheme.darkBlueishColor,
+        child:Icon(CupertinoIcons.cart),
+      
+      
+      ),
       //we will create body
       body: SafeArea(
         child: Container(

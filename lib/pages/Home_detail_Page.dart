@@ -15,7 +15,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar:
                   Container(
                     color: Colors.white,
@@ -33,8 +35,8 @@ class HomeDetailPage extends StatelessWidget {
                     shape:MaterialStateProperty.all
                     (StadiumBorder(),
                     )),
-                    child: "Buy".text.make()
-                    ).wh(100, 50)
+                    child: "Add to cart".text.make()    //buy
+                    ).wh(120, 50)
                                   ],
                                 ),
                   ),//.p8(),
@@ -68,8 +70,11 @@ class HomeDetailPage extends StatelessWidget {
                 child: Column(children: [
                    catalog.name.text.xl4.color(MyTheme.darkBlueishColor).bold.make(),
               catalog.desc.text.textStyle(context.captionStyle).xl.make(),
+              10.heightBox,
+               "this iphone is branded ".text.textStyle(context.captionStyle).make().p16(),
+               
                 ]
-                ).py64(),
+                ).py16(),
               
                           ),
               )
