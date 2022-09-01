@@ -28,7 +28,7 @@ class CataLogItem extends StatelessWidget {
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              catalog.name.text.lg.color(MyTheme.darkBlueishColor).bold.make(),
+              catalog.name.text.lg.color(context.accentColor).bold.make(),
               catalog.desc.text.textStyle(context.captionStyle).make(),
               ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
@@ -39,7 +39,8 @@ class CataLogItem extends StatelessWidget {
                   
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                        MyTheme.darkBlueishColor)
+                      //it not working ->context.theme.buttonColor)
+                       MyTheme.darkBlueishColor)
                         ,
                   shape:MaterialStateProperty.all
                   (StadiumBorder(),
@@ -52,6 +53,6 @@ class CataLogItem extends StatelessWidget {
           ))
         ],
       ),
-    ).white.rounded.square(150).make().py16();
+    ).color(context.cardColor).rounded.square(150).make().py16();///white.rounded.square(150).make().py16();
   }
 }

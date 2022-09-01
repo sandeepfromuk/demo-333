@@ -15,12 +15,13 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-      ),
+      appBar: AppBar(backgroundColor: Colors.transparent),
+      
+
+        
       bottomNavigationBar:
                   Container(
-                    color: Colors.white,
+                    color: context.cardColor,//Colors.white,
                     child: ButtonBar(
                                   alignment: MainAxisAlignment.spaceBetween,
                                   buttonPadding:Vx.mH8, //Vx.mOnly(right: 16),
@@ -40,7 +41,7 @@ class HomeDetailPage extends StatelessWidget {
                                   ],
                                 ),
                   ),//.p8(),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor:context.canvasColor,// MyTheme.creamColor,
       
     
       body:SafeArea(
@@ -68,7 +69,9 @@ class HomeDetailPage extends StatelessWidget {
                 color: Colors.white,
                 width: context.screenWidth,
                 child: Column(children: [
-                   catalog.name.text.xl4.color(MyTheme.darkBlueishColor).bold.make(),
+                   catalog.name.text.xl4.
+                   color(context.accentColor).
+                   bold.make(),
               catalog.desc.text.textStyle(context.captionStyle).xl.make(),
               10.heightBox,
                "this iphone is branded ".text.textStyle(context.captionStyle).make().p16(),
