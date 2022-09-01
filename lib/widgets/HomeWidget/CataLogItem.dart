@@ -1,10 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/models/catalog.dart';
-import 'package:flutter_application_3/widgets/HomeWidget/CatalogImage.dart';
+import 'package:flutter_application_3/widgets/HomeWidget/add_to_cart.dart';
 import 'package:flutter_application_3/widgets/Theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-//it mention in catalog image but not manage 
+import 'package:flutter_application_3/models/Cart.dart';
+import 'package:flutter_application_3/models/catalog.dart';
+import 'package:flutter_application_3/widgets/HomeWidget/CatalogImage.dart';
+//import 'package:flutter_application_3/widgets/Theme.dart';
+
+//it mention in catalog image but not manage
 class CataLogItem extends StatelessWidget {
   final Item catalog;
 
@@ -32,27 +37,21 @@ class CataLogItem extends StatelessWidget {
               catalog.desc.text.textStyle(context.captionStyle).make(),
               ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
-                buttonPadding:Vx.mH8, //Vx.mOnly(right: 16),
+                buttonPadding: Vx.mH8, //Vx.mOnly(right: 16),
                 children: [
                   "\$${catalog.price}".text.bold.make(),
-                  ElevatedButton(onPressed: () {}, 
-                  
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                      //it not working ->context.theme.buttonColor)
-                       MyTheme.darkBlueishColor)
-                        ,
-                  shape:MaterialStateProperty.all
-                  (StadiumBorder(),
-                  )),
-                  child: "Add to cart ".text.make()   //buy 
-                  )
+                  AddtoCart(catalog: catalog)
                 ],
               )
             ],
           ))
         ],
       ),
-    ).color(context.cardColor).rounded.square(150).make().py16();///white.rounded.square(150).make().py16();
+    ).color(context.cardColor).rounded.square(150).make().py16();
+
+    ///white.rounded.square(150).make().py16();
   }
 }
+
+////////////////////////////////
+

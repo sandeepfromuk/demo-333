@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/widgets/HomeWidget/add_to_cart.dart';
 import 'package:flutter_application_3/widgets/Theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -27,17 +28,18 @@ class HomeDetailPage extends StatelessWidget {
                                   buttonPadding:Vx.mH8, //Vx.mOnly(right: 16),
                                   children: [
                     "\$${catalog.price}".text.bold.xl4.red800.make(),
-                    ElevatedButton(onPressed: () {}, 
+                    AddtoCart(catalog: catalog).wh(120,50)
+                    // ElevatedButton(onPressed: () {}, 
                     
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          MyTheme.darkBlueishColor)
-                          ,
-                    shape:MaterialStateProperty.all
-                    (StadiumBorder(),
-                    )),
-                    child: "Add to cart".text.make()    //buy
-                    ).wh(120, 50)
+                    // style: ButtonStyle(
+                    //     backgroundColor: MaterialStateProperty.all(
+                    //       MyTheme.darkBlueishColor)
+                    //       ,
+                    // shape:MaterialStateProperty.all
+                    // (StadiumBorder(),
+                    // )),
+                    // child: "Add to cart".text.make()    //buy
+                    // ).wh(120, 50)
                                   ],
                                 ),
                   ),//.p8(),
@@ -74,7 +76,7 @@ class HomeDetailPage extends StatelessWidget {
                    bold.make(),
               catalog.desc.text.textStyle(context.captionStyle).xl.make(),
               10.heightBox,
-               "this iphone is branded ".text.textStyle(context.captionStyle).make().p16(),
+              "this iphone is branded ".text.textStyle(context.captionStyle).make().p16(),
                
                 ]
                 ).py16(),

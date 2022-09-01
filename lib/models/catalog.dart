@@ -1,11 +1,20 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:flutter_application_3/models/Cart.dart';
+
 class CatalogModel {
+    static final cartModel =CatalogModel ._internal();
+  CatalogModel ._internal();
+  factory CatalogModel () => cartModel;
+
+
   static List<Item> items = [];
- static Item getById(int id) =>
+  //static
+  Item getById(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
-  static Item getByPosition(int pos) => items[pos];
+  // static
+  Item getByPosition(int pos) => items[pos];
 }
 
 //     Item(1, "iPhone13Pro", "Apple iPhone13Pro generator", 77777, "#33505a",
@@ -115,25 +124,23 @@ class Item {
         imageUrl.hashCode;
   }
 }
- // factory Item.fromMap(Map<String, dynamic> map) {
-  //   //intialize bases of some logic use factory con
-  //   return Item(
-  //       id: map["id"],
-  //     name: map["name"],
-  //     desc: map["desc"],
-  //     price: map["price"],
-  //     color: map["color"],
-  //     imageUrl: map["imageUrl"],
-  //   );
-  // }
-  //  toMap() => {
-  //       "id": id,
-  //       "name": name,
-  //       "desc": desc,
-  //       "price": price,
-  //       "color": color,
-  //       "imageurl": imageUrl
-  //     };
-  /////////////////////////////////////////////////////
-
-
+// factory Item.fromMap(Map<String, dynamic> map) {
+//   //intialize bases of some logic use factory con
+//   return Item(
+//       id: map["id"],
+//     name: map["name"],
+//     desc: map["desc"],
+//     price: map["price"],
+//     color: map["color"],
+//     imageUrl: map["imageUrl"],
+//   );
+// }
+//  toMap() => {
+//       "id": id,
+//       "name": name,
+//       "desc": desc,
+//       "price": price,
+//       "color": color,
+//       "imageurl": imageUrl
+//     };
+/////////////////////////////////////////////////////
